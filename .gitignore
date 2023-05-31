@@ -6,14 +6,15 @@
 
 Servers
 
-MANIFEST.MF
 
 
+/target
+target/
+*/target/*
 target
 
-*/target/*
+.DS_Store
 
-.DS_STORE
 
 # Compiled class file
 *.class
