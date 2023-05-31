@@ -10,7 +10,7 @@ public class AdminController {
 
 	// 확인
 
-	
+	sdjdfsjf
 	
 	
 	
