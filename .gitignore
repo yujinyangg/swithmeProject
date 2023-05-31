@@ -1,4 +1,4 @@
-#STS
+#STS file
 
 .metadata
 
@@ -13,7 +13,6 @@ target
 .settings
 
 */target/*
-
 
 .DS_STORE
 
