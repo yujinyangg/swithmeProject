@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="bandMapper">
+	
+	<resultMap id="bandBoardResultSet" type="bandBoard">
+		<result column="sb_no"     	 		 property="sbNo" />
+		<result column="sb_board_no"     	 property="sbBoardNo" />
+		<result column="member_id"     	 	 property="memberId" />
+		<result column="sb_category"     	 property="sbCategory" />
+		<result column="sb_content"     	 property="sbContent" />
+		<result column="sb_create_date"      property="sbCreateDate" />
+		<result column="sb_status"     	 	 property="sbStatus" />
+		<result column="sb_count"     	 	 property="sbCount" />
+	</resultMap>
+
+	<select id="selectBandList" resultMap="bandBoardResultSet">
+		SELECT
+			   	SB_BOARD_NO
+			   ,NICKNAME
+			   ,TO_CHAR(SB_CREATE_DATE, 'YYYY-MM-DD') AS "SB_CREATE_DATE"
+			   ,SB_CONTENT
+			   ,SB_COUNT
+		  FROM
+				SBAND_BOARD
+		  JOIN
+	            MEMBER USING(MEMBER_ID)
+		 WHERE
+				SB_NO = 2
+		   AND
+				SB_CATEGORY = 'Y'
+		   AND
+				SB_STATUS = 'Y'
+		 ORDER
+		    BY
+				SB_BOARD_NO DESC
+	</select>
+
+</mapper>
